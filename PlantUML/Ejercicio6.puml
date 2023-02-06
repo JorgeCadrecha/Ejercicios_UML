@@ -1,0 +1,15 @@
+@startuml
+
+class Persona {
++ Nombre: String
++ Primer apellido: String
++ Segundo apellido: String
++ Fecha de nacimiento: Date
++ Sexo: String
++ Número de indentificación: String
+
+}
+
+@enduml
+
+//https://www.plantuml.com/plantuml/svg/ROun3i8m34Ltdy8xDs3gW1YhIZs1IKonb3Z8IIKanAdOM7in30FAmEhtdlM7siZQcXD0I5GhJcorAE4TTZYMV3BUuznCTF73P9BPaAwSaiJIaPcNLMFvXuuSBeIHKIb85jRcz42DlzcjLyVjvV_BHnQDRifPWbVRKtyMF006rkYRtm00
