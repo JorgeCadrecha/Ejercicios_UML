@@ -1,0 +1,19 @@
+@startuml
+class Proyecto {
++ Nombre : String
++ Fecha de inicio: Date
++ Fecha de fin: Date
+}
+
+class Miembro_del_Equipo {
++ Nombre : String
++ Apellidos: String
++ Rol: String
+}
+
+class Luegar_de_Actuación {
++ Nombre : String
++ Coordenada X: Doble
++ Coordenada Y: Doble
+}
+@enduml
