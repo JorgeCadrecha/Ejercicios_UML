@@ -1,0 +1,25 @@
+@startuml
+class c1:Circulo {
++ Color = "Negro"
++ Diámetro = 1
+
+}
+
+class r1:Rectángulo {
++ Longitud = 3
++ Anchura = 1
++ Color = "Naranja"
+}
+
+class c2:Cuadrado {
++ Longitud = 1.5
++ Color = "Azul"
+}
+
+class e1:Elipse {
++ Color = "Amarillo"
++ Eje Mayor = 3
++ Eje Menor = 1
+
+}
+@enduml
