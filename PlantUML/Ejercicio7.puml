@@ -13,7 +13,7 @@ class Miembro_del_Equipo {
 
 class Luegar_de_Actuación {
 + Nombre : String
-+ Coordenada X: Doble
-+ Coordenada Y: Doble
++ Coordenada X: Double
++ Coordenada Y: Double
 }
 @enduml
