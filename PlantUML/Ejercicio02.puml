@@ -1,32 +1,30 @@
 @startuml
-object "Kate: Persona" as kate{
-
+class Kate{
     Nombre = "kate"
     Apellido = "Windsor"
     ApellidoNacimiento = "Middleton"
     Sexo = “Mujer”
 }
-object "Guillermo: Persona" as guillermo{
+class Guillermo{
     Nombre = “Guillermo”
     Apellido = “Windsor”
     Sexo = “Hombre”
 }
-object "Diana: Persona" as diana{
-
+class Diana{
     Nombre = “Diana”
     Apellido = “Windsor”
     Apellido Nacimiento = “Spencer”
     Sexo = “Mujer”
 }
-object "Carlos: Persona" as carlos{
+class Carlos{
     Nombre = “Carlos”
     Apellido = “Windsor”
     Sexo = “Hombre”
 
 }
 
-kate -- guillermo:  < Está Casado Con
-diana -- guillermo:  < es hijo de
-carlos -- diana:  < Está Casado Con
-carlos -- guillermo:  < es hijo de
+Kate -- Guillermo:  < Está Casado Con
+Diana -- Guillermo:  < es hijo de
+Carlos -- Diana:  < Está Casado Con
+Carlos -- Guillermo:  < es hijo de
 @enduml
