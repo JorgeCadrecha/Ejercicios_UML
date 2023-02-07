@@ -5,7 +5,7 @@ class Proyecto {
 + Fecha de fin: Date
 }
 
-class Miembro_del_Equipo {
+class Miembro_del_Equipo as "Persona"{
 + Nombre : String
 + Apellidos: String
 + Rol: String
@@ -16,4 +16,9 @@ class Lugar_de_Actuación {
 + Coordenada X: Double
 + Coordenada Y: Double
 }
+
+Miembro_del_Equipo "1--*" - "0--*" Proyecto : Participa
+
+Proyecto "0--*" - "0--*" Lugar_de_Actuación: Tiene lugar en
+
 @enduml
