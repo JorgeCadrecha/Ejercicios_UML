@@ -1,4 +1,4 @@
-# Tarea2_Tecnicas_Programación
+# Ejercicios UML
 Tarea 2 : Ejercicios UML
 
 ## Nota:
