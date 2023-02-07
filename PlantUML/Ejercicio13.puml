@@ -1,0 +1,32 @@
+@startuml
+class pt1.Punto{
+   X = -10
+   Y = 10
+}
+
+class pt2.Punto{
+   X = 10
+   y = 10
+}
+
+class pt3.Punto{
+   X = -10
+   Y = -10
+}
+
+class pt4.Punto{
+   X = 10
+   Y = -10
+}
+
+class pol1.Polígono{
+   null
+}
+
+pol1.Polígono o-- pt1.Punto : > Posee
+pol1.Polígono o-- pt2.Punto : > Posee
+pol1.Polígono o-- pt3.Punto : > Posee
+pol1.Polígono o-- pt4.Punto : > Posee
+
+
+@enduml
