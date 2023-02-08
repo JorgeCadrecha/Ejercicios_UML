@@ -1,0 +1,49 @@
+@startuml
+skinparam groupInheritance 2
+ class Coleccion{
+  Nombre: Texto
+  Descripcion: Texto
+}
+  class Objeto{
+   Código: 1..*Numero
+   Nombre = "objeto"
+   Autor: 1 Texto
+   Fecha de creacion: 1 Tiempo
+   Descripcion: Texto
+   Origen: enum Lugar
+   Estado: 1 enum Estado
+   Tematica: enum Tematica 
+}
+  class u1Ubicacion{
+   Codigo: Numero
+}
+  class Sala{
+   Nombre: Texto
+   Está abierta al publico: enum Color
+}
+  class Almacen{
+   Nombre: texto
+}
+  class Edificio{
+   Nombre: 1 Texto
+   Dirección: 1 Texto
+}
+  class Planta{
+   Número: 1 Número
+}
+  class ColeccionTemporal{
+   Fecha de Inicio: 1 Texto
+   Fecha de fin: 1 Tiempo
+}
+
+Coleccion"0..1" -- "1..*"Objeto 
+u1Ubicacion"1" -- "0..*"Objeto: < Se Ubica En
+ColeccionTemporal <|-- Coleccion
+u1Ubicacion <-- Sala
+u1Ubicacion <-- Almacen
+Planta"0..*"--o "0..*"Edificio
+
+
+
+
+@enduml
