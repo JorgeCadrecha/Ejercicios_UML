@@ -1,0 +1,31 @@
+@startuml
+class Cuadro {
+Título: String
+Cronología: Time
+Técnica: enum Técnica
+Sub-técnica: enum Sub-Técnica
+Material del soporte: enum Material
+Autor: String
+Estado de conservación: enum Estado de Conservación
+
+}
+class Lugar{
+Institución: String
+Ciudad: String
+País: String
+}
+
+class Réplica {
+Título: String
+Cronología: Time
+Técnica: enum Técnica
+Sub-técnica: enum Sub-Técnica
+Material del soporte: enum Material
+Autor: String
+Estado de conservación: enum Estado de Conservación
+}
+
+Cuadro "0.. " - "    1" Lugar : Se Localiza En  >
+Cuadro "1 Original" -- "0.. Copia " Réplica : Es Réplica De <
+
+@enduml
