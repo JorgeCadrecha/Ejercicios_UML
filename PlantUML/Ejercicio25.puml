@@ -1,0 +1,31 @@
+@startuml
+class Libro {
+Número de hojas: int
+Forma de impresión: enum FormaImpresión
+Técnica de encuadernación: enum TécnicaEncuadernación
+}
+
+class FormaImpresión{}
+class Manuscrito{}
+class Impreso{}
+
+class TécnicasEncuadernación{}
+class Cosido{}
+class Encuadernado{}
+
+class Muestra{
+Fracción del total: double
+Método de extracción: String
+}
+
+
+Libro <|-- FormaImpresión
+Libro <|-- TécnicasEncuadernación
+Libro *- Muestra
+FormaImpresión <|-- Manuscrito
+FormaImpresión <|-- Impreso
+TécnicasEncuadernación <|-- Cosido
+TécnicasEncuadernación <|-- Encuadernado
+
+
+@enduml
