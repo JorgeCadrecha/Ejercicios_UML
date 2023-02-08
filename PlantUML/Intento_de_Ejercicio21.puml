@@ -1,29 +1,29 @@
 @startuml
-class Entidad_Geográfica{
-Código: String
-Nombre: String
+skinparam groupInheritance 2
+class EntidadGeografica{
+ codigo: 1 Texto
+ Nombre: 1 Texto
+}
+entity Punto
+entity Linea
+entity Area
+
+entity puntos{
+ X: 1 Numero
+ Y: 1 Numero
+ Z: 1 Numero
+}
+entity lineas{
+ linea: 2 Puntos
+}
+entity Areas{
+ Area: 3 Puntos
 }
 
-class Punto {}
-class Línea {}
-class Área {}
-
-Entidad_Geográfica <|-- Punto
-Entidad_Geográfica <|-- Línea
-Entidad_Geográfica <|-- Área
-
-
-class x {
-X: double
-Y: double
-Z: double
-}
-
-class x2 {}
-class x3 {}
-
-x2 "0..*" o-- "2..*"x
-x3 "0..*" o--- "3..* "x
-
+puntos"2..*" --o "0..*"lineas
+puntos"3..*" --o "0..*"Areas
+EntidadGeografica <|-- Punto
+EntidadGeografica <|-- Linea
+EntidadGeografica <|-- Area
 
 @enduml
