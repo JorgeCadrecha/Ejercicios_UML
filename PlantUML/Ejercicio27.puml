@@ -1,0 +1,32 @@
+@startuml
+
+class EA as "Entidad Arqueológica" {
+    Cronologia: Tiempo
+}
+class Lugar {
+    Nombre: String
+    Provicia: String
+    Pais: String
+}
+class Dimension {
+    Nombre: String
+    Medida: String
+    Unidad: String
+}
+class CA as "Conjunto Arqueologico" {}
+class SA as "Sitio Arqueologico" {
+    Tipo: TipoSitio
+}
+enum TipoSitio {
+    Asentamiento
+    Enterramiento
+    Area de explotacion
+}
+
+Dimension "1" o-- "0..*" EA : < Mide
+EA "0..*" o-- "0..*" CA
+SA <|-- EA
+CA <|-- EA : Singular/Multiple
+Lugar "1" -- "0..*" EA : < Se encuentra en
+
+@enduml
