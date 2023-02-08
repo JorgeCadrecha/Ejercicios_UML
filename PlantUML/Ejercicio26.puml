@@ -1,0 +1,68 @@
+@startuml
+
+enum TCS as "Tecnica cierre simple" {
+    Tela encerada
+    Tela Impregnada
+}
+enum TCC as "Tecnica cierre complejo" {
+    Vidriera incolora
+    Vidriera coloreada
+}
+enum FA as "Forma Ábside" {
+    Semicircular
+    En corona
+}
+enum TC as "Tipo crucero" {
+    Sin brazos salientes
+    Con brazos salientes
+}
+
+class Iglesia {
+    -String nombre
+    -String direccion
+}
+
+class IglesiaRural {}
+class IglesiaMonacal {
+    Orden: String
+    }
+class Ábside {
+    Forma: FA
+    }
+class Crucero {
+    Tipo: TC
+    }
+class Nave {
+    Superficie: int
+    }
+class VentanaSimple {
+    arcoDoble: boolean
+    decorada: boolean
+    TecnicaCierre: TCS
+    }
+class VentanaCompleja {
+    TecnicaCierre: TCC
+    }
+class Ventana {
+    Descripcion: String
+    Anchura: int
+    Altura: int
+}
+
+Ventana <|-- VentanaSimple
+Ventana <|-- VentanaCompleja
+
+VentanaSimple "0..*" --o "1" IglesiaRural
+VentanaCompleja "1..*" --o "1" IglesiaMonacal
+
+IglesiaRural --|> Iglesia
+IglesiaMonacal --|> Iglesia
+
+Ábside "0..1" --o "1" IglesiaRural
+Ábside "2..4" --o  "1" IglesiaMonacal
+Crucero "1" --o "1"  IglesiaMonacal
+
+Nave "1" --o "1" IglesiaRural
+Nave "3..5" --o "1" IglesiaMonacal
+
+@enduml
