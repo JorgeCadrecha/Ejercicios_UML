@@ -1,0 +1,36 @@
+@startuml
+skinparam groupInheritance 2
+  class Persona{
+    NULL
+}
+  class RolA{
+    NULL
+}
+  class Responsable{
+    NULL
+}
+  class Tecnico{
+    NULL
+}
+  class Intervencion{
+    NULL
+}
+  class Proyecto{
+    NULL
+}
+  class Actuacion{
+    NULL
+}
+
+RolA"0..*"-- "1"Persona: < Desenpeña
+RolA <|-- Responsable
+RolA <|-- Tecnico
+Responsable"1"-- "1"Proyecto: > Dirige
+Proyecto"1" o-- "0..*"Actuacion
+Intervencion <|-- Proyecto
+Intervencion <|-- Actuacion
+Tecnico"0..*"--"1"Intervencion: > Participa En
+
+
+
+@enduml
