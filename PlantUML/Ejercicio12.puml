@@ -1,0 +1,8 @@
+@startuml
+class Proyecto{
+    Código: 1 Texto
+    Datación: 0...1 Tiempo
+    Materiales: 1...*enum Material
+}
+
+Proyecto o-- Proyecto: Estructura marco y sub-estrcutura

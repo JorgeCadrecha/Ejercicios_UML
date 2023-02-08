@@ -1,0 +1,59 @@
+@startuml
+
+class Biblioteca{
+   Nombre: 1 Texto
+   Dirección: 1 Texto
+   Teléfono: 1..*Texto
+   Número de empleados: 1 Número
+   Año de apertura: 1 Tiempo
+}
+
+class Planta{
+   Número: 1 Número
+   Capacidad: 1 Número
+}
+
+class Temática{
+   Nombre: 1 Texto
+}
+
+class Libro{
+   ISBN: 1 Texto
+   Título: 1 Texto
+   Año depublicación: 1 Tiempo
+   Idioma: 1..*enum Idioma
+}
+
+class Ejemplar{
+   Código: 1 Texto
+   Editorial: 1 Texto
+   Año de adquisición: 1 Tiempo
+}
+
+class Préstamo{
+   Fecha de inicio: 1 Tiempo
+   Fecha estipulada de devolución: 1 Tiempo
+   Fecha real de devolución: 0.1 Tiempo
+}
+
+class Lector{
+   Nombre: 1 Texto
+   Número de identificación: 1 Texto
+   Dirección: 1 Texto
+}
+
+class Empleado{
+   Nombre: 1 Texto
+   Código: 1 Texto
+}
+
+
+Biblioteca o-- Planta
+Planta -- Temática : > Alberga
+Temática -- Libro : < Pertenece A
+Libro o-- Ejemplar
+Ejemplar -- Préstamo : < Involucra
+Préstamo -- Lector : > Hecho A
+Préstamo -- Empleado : > Hecho A
+
+@enduml

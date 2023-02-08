@@ -1,0 +1,64 @@
+@startuml
+class Cuadro {
+Título: 0..* Texto
+Cronología: 1 Tiempo
+Técnica: 1 enum Técnica
+Sub-técnica: 1 enum Sub-Técnica
+Material del soporte: 1 enum Material
+Autor: 1 Texto
+Estado de conservación: 1 enum Estado de Conservación
+}
+
+class Material{}
+class Madera{}
+class Lienzo{}
+class Obra{}
+class Nogal{}
+class Álamo{}
+class Acuarela{}
+class Técnica{}
+class Acuarela{}
+class Óleo{}
+class Pastel{}
+class Fresco{}
+
+Nogal <|-- Madera
+Álamo <|-- Madera
+Lienzo <|-- Material
+Madera <|-- Material
+Obra <|-- Material
+
+Acuarela <|--Técnica
+Óleo <|--Técnica
+Pastel <|--Técnica
+Fresco <|-- Técnica
+
+class SubTécnica{}
+class Sfumato{}
+class PinceladaSimple{}
+class Collage{}
+class Veladura{}
+
+Sfumato <|-- SubTécnica
+PinceladaSimple <|-- SubTécnica
+Collage <|-- SubTécnica
+Veladura <|-- SubTécnica
+
+class EstadoConservación {}
+class Excelente{}
+class Bueno{}
+class Regular{}
+class Malo{}
+class Destruido{}
+
+Excelente <|-- EstadoConservación
+Bueno <|-- EstadoConservación
+Regular <|-- EstadoConservación
+Malo <|-- EstadoConservación
+Destruido <|-- EstadoConservación
+
+Cuadro *-- EstadoConservación
+Cuadro o-- SubTécnica
+Cuadro *-- Material
+Cuadro *--Técnica
+@enduml

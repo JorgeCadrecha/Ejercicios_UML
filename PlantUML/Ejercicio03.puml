@@ -1,5 +1,5 @@
 @startuml
-class Cuadro implements Lugar1{
+Object Cuadro implements Lugar1{
   -Titulo = "La Gioconda"
   -AC = "1503 - 1516" 
   -Tecnica = Óleo
@@ -10,7 +10,7 @@ class Cuadro implements Lugar1{
 
 
 }
-class Replica extends Cuadro implements Lugar2{
+Object Replica extends Cuadro implements Lugar2{
   -Titulo = "La Gioconda"
   -AC = "1503 - 1516" 
   -Tecnica = Óleo
@@ -20,7 +20,7 @@ class Replica extends Cuadro implements Lugar2{
   -Estado de conversion = Regular
 
 }
-Interface Lugar1{
+Object Lugar1{
 
   - Institucion = "Museo de El Prado"
   - Ciudad = "Paris"
@@ -28,7 +28,7 @@ Interface Lugar1{
 
 
 }
-Interface Lugar2{
+Object Lugar2{
 
   - Institucion = "Museo de El Prado"
   - Ciudad = "Madrid"
