@@ -1,0 +1,29 @@
+@startuml
+class Entidad_Geográfica{
+Código: String
+Nombre: String
+}
+
+class Punto {}
+class Línea {}
+class Área {}
+
+Entidad_Geográfica <|-- Punto
+Entidad_Geográfica <|-- Línea
+Entidad_Geográfica <|-- Área
+
+
+class x {
+X: double
+Y: double
+Z: double
+}
+
+class x2 {}
+class x3 {}
+
+x2 "0..*" o-- "2..*"x
+x3 "0..*" o--- "3..* "x
+
+
+@enduml
