@@ -1,0 +1,27 @@
+@startuml
+
+class Fragmento_Objeto {}
+class Objeto_Completo {
+    Uso: Enum
+}
+class Objeto_Arqueologico {
+    Codigo: String
+    Datacion: Date
+    Dimensiones: Array
+    Descripcion: String
+    Material: Enum
+}
+class Sitio_Arqueologico {}
+class Excavacion {
+    FechaInicio: Date
+    FechaFin: Date
+}
+
+Objeto_Arqueologico <|-- Fragmento_Objeto
+Objeto_Arqueologico <|-- Objeto_Completo
+Objeto_Completo "0..1" o-- "0..*" Objeto_Arqueologico
+Objeto_Arqueologico "0..*" -- "0..*" Objeto_Arqueologico : < Es similar a
+Sitio_Arqueologico "1" -- "0..*" Excavacion : < Tiene lugar en
+Objeto_Arqueologico -- Excavacion : < Fue encontrado en
+
+@enduml
